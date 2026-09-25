@@ -1,0 +1,2 @@
+<?php
+// todos los posts
