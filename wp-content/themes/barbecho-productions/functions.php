@@ -12,4 +12,5 @@ require_once get_template_directory() . '/includes/shortcodes.php';
 require_once get_template_directory() . '/includes/blocks.php';
 require_once get_template_directory() . '/includes/custom.php';
 require_once get_template_directory() . '/includes/acf.php';
+require_once get_template_directory() . '/includes/post-types.php';
 ?>
