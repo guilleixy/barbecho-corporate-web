@@ -3,19 +3,18 @@
 
 .hero {
     height: calc(100dvh - $header-height);
+    position: relative;
     &__title {
         font-size: 15rem;
         font-family: 'CabinetGrotesk-Black', 'Times New Roman', Times, serif;
         position: relative;
-        --line-scale: 0;
-        &:after{
-            content: "";
-            width: $line-width;
-            background-color: map.get($colors, 'background');
-            height: 100vh;
-            left: -50px;
-            top: var(--line-scale)px;
-            position: absolute;
-        }
+    }
+    &__vertical-line {
+        background-color: map.get($colors, 'background');
+        height: 100vh;
+        width: $line-width;
+        left: -50px;
+        top: 0;
+        position: absolute;
     }
 }

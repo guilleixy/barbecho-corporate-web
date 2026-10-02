@@ -8,8 +8,8 @@ gsap.registerPlugin(SplitText)
 const initHeaderLines = () => {
   gsap.utils.toArray('.js-hero-lines').forEach((element) => {
     gsap.to(element, {
-      '--line-scale': 100,
-      ease: 'power4.inOut',
+      top: -200000,
+      ease: 'none',
       scrollTrigger: {
         trigger: element,
         start: 'top 0%',
