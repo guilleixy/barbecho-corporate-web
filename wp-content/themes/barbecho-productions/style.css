@@ -465,10 +465,13 @@ Text Domain: barebones
   font-style: normal;
 }
 body {
-  color: #E9E9E9;
+  color: #0B0909;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5;
+  min-height: 100dvh;
   text-size-adjust: none;
+  font-family: "CabinetGrotesk-Regular", "Times New Roman", Times, serif;
+  background-color: #D62329;
   font-size: 16px;
   font-size: 1rem;
 }
@@ -2378,10 +2381,6 @@ hr {
   background-color: #E9E9E9;
 }
 
-.main {
-  font-family: "CabinetGrotesk-Bold", "Times New Roman", Times, serif;
-}
-
 .header {
   padding: 24px 0;
   margin-bottom: 48px;
@@ -2409,8 +2408,8 @@ hr {
 }
 
 .footer {
-  background-color: #f5f5f5;
-  padding: var(--section-vertical-padding) 0;
+  background-color: #0B0909;
+  color: #E9E9E9;
 }
 
 .section.section--spaced {

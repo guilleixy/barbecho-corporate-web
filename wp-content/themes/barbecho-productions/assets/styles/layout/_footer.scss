@@ -1,4 +1,7 @@
+@use 'sass:map';
+@use '../config/' as *;
+
 .footer {
-	background-color: $dark_color;
-	padding: var(--section-vertical-padding) 0;
+	background-color: map.get($colors, 'background');
+	color: map.get($colors, 'base');
 }

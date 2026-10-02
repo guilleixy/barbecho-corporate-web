@@ -2,10 +2,13 @@
 @use '../config' as *;
 
 body {
-    color: map.get($colors, 'base');
+    color: map.get($colors, 'background');
     font-family: $base-font-family;
     line-height: $base-line-height;
+    min-height: 100dvh;
     text-size-adjust: none;
+    font-family: 'CabinetGrotesk-Regular', 'Times New Roman', Times, serif;
+    background-color: map.get($colors, 'brand');
     @include font-size($base-font-size);
     &.menu-open {
         overflow: hidden;
