@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_6ac0251a70883",
-            "label": "summary",
-            "name": "Resumen",
+            "label": "Resumen",
+            "name": "summary",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -45,5 +45,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1790977549
+    "modified": 1790978020
 }

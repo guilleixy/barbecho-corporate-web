@@ -11,9 +11,15 @@ function bb_register_projects() {
        'has_archive' => 'proyectos',
        'rewrite' => ['slug' => 'proyectos'],
        'menu_icon' => 'dashicons-portfolio',
-       'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+       'supports' => ['title', 'thumbnail', 'excerpt'],
        'show_in_rest' => true
     ]);
 }
 
 add_action( 'init', 'bb_register_projects' );
+
+function bb_remove_page_editor() {
+    remove_post_type_support('page', 'editor');
+}
+
+add_action('init', 'bb_remove_page_editor');
