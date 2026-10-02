@@ -2419,6 +2419,9 @@ main {
 
 .header {
   height: 12dvh;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 @media screen and (max-width: 1000px) {
   .header .header__navigation {
@@ -2616,12 +2619,11 @@ main {
   z-index: 1;
 }
 .hero__vertical-line {
-  background-color: #0B0909;
   height: 100%;
   width: 4px;
   left: -50px;
   top: 0;
-  position: absolute;
+  transform-origin: top;
 }
 .hero__bottom-offset {
   position: relative;
@@ -2632,8 +2634,11 @@ main {
 .hero__bottom-offset__horizontal-line {
   height: 4px;
   width: 100dvw;
-  position: absolute;
   top: 0;
   left: calc(50% - 50vw);
+  transform-origin: right;
+}
+.hero__line {
   background-color: #0B0909;
+  position: absolute;
 }

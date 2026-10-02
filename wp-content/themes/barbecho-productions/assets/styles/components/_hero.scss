@@ -15,12 +15,11 @@
         z-index: 1;
     }
     &__vertical-line {
-        background-color: map.get($colors, 'background');
         height: 100%;
         width: $line-width;
         left: -50px;
         top: 0;
-        position: absolute;
+        transform-origin: top;
     }
     &__bottom-offset {
         position: relative;
@@ -30,10 +29,13 @@
         &__horizontal-line {
             height: $line-width;
             width: 100dvw;
-            position: absolute;
             top: 0;
             left:calc(50% - 50vw);
-            background-color: map.get($colors, 'background');
+            transform-origin: right;
         }
+    }
+    &__line {
+        background-color: map.get($colors, 'background');
+        position: absolute;
     }
 }

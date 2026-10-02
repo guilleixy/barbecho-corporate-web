@@ -4,6 +4,9 @@
 .header {
 	// padding: $base-spacing-unit 0;
 	height: $header-height;
+	position: sticky;
+	top: 0;
+	z-index: 10;
 	.header__navigation {
 		@include resp-max($breakpoint-nav) {
 			display: none;

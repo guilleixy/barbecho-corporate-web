@@ -2,24 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitText from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger)
-gsap.registerPlugin(SplitText)
-
-const initHeaderLines = () => {
-  gsap.utils.toArray('.js-hero-vertical-lines').forEach((element) => {
-    gsap.to(element, {
-      top: -20,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: element,
-        start: 'top 0%',
-        end: 'top 40%',
-        scrub: true,
-        markers: true,
-      }
-    })
-  })
-}
+gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const initFadeUp = () => {
   gsap.utils.toArray('.js-split-up').forEach((element) => {
@@ -45,5 +28,4 @@ export const initAnimations = () => {
   }
 
   initFadeUp()
-  initHeaderLines();
 }
