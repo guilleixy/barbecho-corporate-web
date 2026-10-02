@@ -1,9 +1,0 @@
-.DS_Store
-npm-debug.log
-.sass-cache
-.vite-build
-node_modules
-assets/sass/vendor
-*.map
-**/*.map
-yarn.lock
