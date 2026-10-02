@@ -76,15 +76,15 @@ add_filter('tiny_mce_before_init', 'barbecho_tiny_mce_before_init');
  * Add Front Page edit link to admin Pages menu
  */
 
-function front_page_on_pages_menu() {
-    global $submenu;
-    if ( get_option( 'page_on_front' ) ) {
-        $submenu['edit.php?post_type=page'][501] = array(
-            __( 'Front Page', 'barbecho' ),
-            'manage_options',
-            get_edit_post_link( get_option( 'page_on_front' ) )
-        );
-    }
-}
+// function front_page_on_pages_menu() {
+//     global $submenu;
+//     if ( get_option( 'page_on_front' ) ) {
+//         $submenu['edit.php?post_type=page'][501] = array(
+//             __( 'Front Page', 'barbecho' ),
+//             'manage_options',
+//             get_edit_post_link( get_option( 'page_on_front' ) )
+//         );
+//     }
+// }
 
-add_action( 'admin_menu' , 'front_page_on_pages_menu' );
+// add_action( 'admin_menu' , 'front_page_on_pages_menu' );
