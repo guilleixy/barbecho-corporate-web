@@ -9,6 +9,7 @@ body {
     text-size-adjust: none;
     font-family: 'CabinetGrotesk-Regular', 'Times New Roman', Times, serif;
     background-color: map.get($colors, 'brand');
+    overflow-x: hidden;
     @include font-size($base-font-size);
     &.menu-open {
         overflow: hidden;

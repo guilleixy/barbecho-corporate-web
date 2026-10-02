@@ -6,9 +6,9 @@ gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(SplitText)
 
 const initHeaderLines = () => {
-  gsap.utils.toArray('.js-hero-lines').forEach((element) => {
+  gsap.utils.toArray('.js-hero-vertical-lines').forEach((element) => {
     gsap.to(element, {
-      top: -200000,
+      top: -20,
       ease: 'none',
       scrollTrigger: {
         trigger: element,

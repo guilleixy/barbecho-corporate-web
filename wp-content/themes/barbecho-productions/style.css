@@ -472,6 +472,7 @@ body {
   text-size-adjust: none;
   font-family: "CabinetGrotesk-Regular", "Times New Roman", Times, serif;
   background-color: #D62329;
+  overflow-x: hidden;
   font-size: 16px;
   font-size: 1rem;
 }
@@ -2417,7 +2418,7 @@ main {
 }
 
 .header {
-  height: 50px;
+  height: 12dvh;
 }
 @media screen and (max-width: 1000px) {
   .header .header__navigation {
@@ -2602,19 +2603,37 @@ main {
 }
 
 .hero {
-  height: calc(100dvh - 50px);
+  height: 88dvh;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .hero__title {
-  font-size: 15rem;
+  font-size: 16rem;
   font-family: "CabinetGrotesk-Black", "Times New Roman", Times, serif;
   position: relative;
+  z-index: 1;
 }
 .hero__vertical-line {
   background-color: #0B0909;
-  height: 100vh;
+  height: 100%;
   width: 4px;
   left: -50px;
   top: 0;
   position: absolute;
+}
+.hero__bottom-offset {
+  position: relative;
+  background-color: #D62329;
+  height: 20%;
+  z-index: 2;
+}
+.hero__bottom-offset__horizontal-line {
+  height: 4px;
+  width: 100dvw;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 50vw);
+  background-color: #0B0909;
 }
