@@ -25,8 +25,7 @@ const animateHero = (hero) => {
   const intro = gsap.timeline({
     scrollTrigger: {
       trigger: hero,
-      //start: 'top top',
-      start: () => `top ${header?.offsetHeight ?? ''}px`,
+      start: 'top top',
       end: '+=40%',
       pin: true,
       scrub: true,
