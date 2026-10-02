@@ -1,15 +1,21 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitText from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(SplitText)
+
 
 const initFadeUp = () => {
-  gsap.utils.toArray('.js-fade-up').forEach((element) => {
-    gsap.from(element, {
-      autoAlpha: 0,
+  gsap.utils.toArray('.js-split-up').forEach((element) => {
+    let split = SplitText.create(element, {type: "chars"});
+
+    gsap.from(split.chars, {
+      // autoAlpha: 0,
       y: 40,
       duration: 0.8,
       ease: 'power2.out',
+      stagger: 0.05,
       scrollTrigger: {
         trigger: element,
         start: 'top 85%',
