@@ -1,0 +1,27 @@
+@import 'sass/fonts';
+@import 'sass/colors';
+@import 'sass/typography';
+@import 'sass/spacing';
+
+
+body {
+    background-color: $accent_color;
+    font-family: CabinetGrotesk-Bold, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    color: blue;
+    color: $dark_color;
+}
+
+.header {
+    height: 100dvh;
+    display: flex;
+    font-size: 4rem;
+}
+
+.about-preview {
+    background-color: $dark_color;
+    color: $light_color;
+    height: 100dvh;
+}
+
+main {
+
+}

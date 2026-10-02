@@ -1,0 +1,126 @@
+@charset "UTF-8";
+/**
+* @license
+*
+* Font Family: Cabinet Grotesk
+* Designed by: ITF
+* URL: https://www.fontshare.com/fonts/cabinet-grotesk
+* © 2026 Indian Type Foundry
+*
+* Cabinet Grotesk Thin
+* Cabinet Grotesk Extralight
+* Cabinet Grotesk Light
+* Cabinet Grotesk Regular
+* Cabinet Grotesk Medium
+* Cabinet Grotesk Bold
+* Cabinet Grotesk Extrabold
+* Cabinet Grotesk Black
+* Cabinet Grotesk Variable (Variable font)
+
+*
+*/
+@font-face {
+  font-family: "CabinetGrotesk-Thin";
+  src: url(/fonts/CabinetGrotesk-Thin.woff2?c9257389f7e127ef6b5fd09c5bdf168c) format("woff2"), url(/fonts/CabinetGrotesk-Thin.woff?afd45bdedabad839412fa53774181156) format("woff"), url(/fonts/CabinetGrotesk-Thin.ttf?f6327647038505e083b2f56360fcd906) format("truetype");
+  font-weight: 100;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CabinetGrotesk-Extralight";
+  src: url(/fonts/CabinetGrotesk-Extralight.woff2?ae746d751db87ce26403d77d1be37632) format("woff2"), url(/fonts/CabinetGrotesk-Extralight.woff?05eb07139dcfe880cb83bda23fec6452) format("woff"), url(/fonts/CabinetGrotesk-Extralight.ttf?a9dedddd5b56ae3c1fddb070f3fe4599) format("truetype");
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CabinetGrotesk-Light";
+  src: url(/fonts/CabinetGrotesk-Light.woff2?71c1b96859c2d9444a1ead784266aa42) format("woff2"), url(/fonts/CabinetGrotesk-Light.woff?128492e6013be9f5bc4789fd66053c00) format("woff"), url(/fonts/CabinetGrotesk-Light.ttf?d6a99783307ee619a9e510fcbf516a85) format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CabinetGrotesk-Regular";
+  src: url(/fonts/CabinetGrotesk-Regular.woff2?6d871eb07c59f89fa6f468d409d03747) format("woff2"), url(/fonts/CabinetGrotesk-Regular.woff?297ef17a484af19eefdc06e49f9ada1f) format("woff"), url(/fonts/CabinetGrotesk-Regular.ttf?04017b856cc1a5b9defc2eec756f257d) format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CabinetGrotesk-Medium";
+  src: url(/fonts/CabinetGrotesk-Medium.woff2?b89619f9839b2472fdd9aad402430e06) format("woff2"), url(/fonts/CabinetGrotesk-Medium.woff?c0b4580d6e368186222384e11a3a1a6d) format("woff"), url(/fonts/CabinetGrotesk-Medium.ttf?b86444778213877b0534b0a68caf8b2a) format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CabinetGrotesk-Bold";
+  src: url(/fonts/CabinetGrotesk-Bold.woff2?1bd982b4c573321f159b0ffed17d2467) format("woff2"), url(/fonts/CabinetGrotesk-Bold.woff?e0f447a01251be1644af2e78eafe1fc1) format("woff"), url(/fonts/CabinetGrotesk-Bold.ttf?33c0eaa3441bf9c94b6c69c768cd169a) format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CabinetGrotesk-Extrabold";
+  src: url(/fonts/CabinetGrotesk-Extrabold.woff2?522aa650dd2aaf97c87fde3d0576895b) format("woff2"), url(/fonts/CabinetGrotesk-Extrabold.woff?be568c9711cb9cf1bc361cde501279c3) format("woff"), url(/fonts/CabinetGrotesk-Extrabold.ttf?5cbc28967345b2b2bf0c14674d228fd2) format("truetype");
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CabinetGrotesk-Black";
+  src: url(/fonts/CabinetGrotesk-Black.woff2?b3d528bf457583fc7028133233b7085d) format("woff2"), url(/fonts/CabinetGrotesk-Black.woff?c7c5bd7d55d4a1ef39f53713c6dcff7d) format("woff"), url(/fonts/CabinetGrotesk-Black.ttf?026907bb36bbce7a9eb4c7d68bca6ca3) format("truetype");
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 900.0;
+*
+* available axes:
+'wght' (range from 100.0 to 900.0
+*/
+@font-face {
+  font-family: "CabinetGrotesk-Variable";
+  src: url(/fonts/CabinetGrotesk-Variable.woff2?ece0754cc2bbbfc6ea17a9c91343a144) format("woff2"), url(/fonts/CabinetGrotesk-Variable.woff?230a034329654afa969bcad549a08d9d) format("woff"), url(/fonts/CabinetGrotesk-Variable.ttf?5d8b44553adc33857c97308a97a20379) format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+https://artofstyleframe.com/tools/spacing-scale-generator/
+base uni:8px; steps: 12; Modular (ratio); Golden ratio
+**/
+/* 8px */
+/* 13px */
+/* 21px */
+/* 34px */
+/* 55px */
+/* 89px */
+/* 144px */
+/* 232px */
+/* 376px */
+/* 608px */
+/* 984px */
+/* 1592px */
+body {
+  background-color: #D62329;
+  font-family: CabinetGrotesk-Bold, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: blue;
+  color: #0B0909;
+}
+
+.header {
+  height: 100dvh;
+  display: flex;
+  font-size: 4rem;
+}
+
+.about-preview {
+  background-color: #0B0909;
+  color: #E9E9E9;
+  height: 100dvh;
+}
