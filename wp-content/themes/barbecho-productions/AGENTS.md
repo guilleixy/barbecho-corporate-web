@@ -146,11 +146,11 @@ Follow WordPress coding practices and the surrounding file's established style.
   - `wp_kses_post()` for trusted rich HTML where appropriate.
 - Sanitize and validate external input before using it.
 - Use strict comparisons where practical.
-- Prefix theme functions with `bb_` unless extending an existing naming convention.
+- Prefix theme functions with `bp_` unless extending an existing naming convention.
 - Use snake_case for PHP functions and variables.
 - Add hooks close to the callback they register.
 - Keep functions focused and avoid unrelated changes.
-- Use the theme text domain `barebones` for translatable strings.
+- Use the theme text domain `barbecho` for translatable strings.
 - Do not suppress errors or add global state without a clear reason.
 
 Do not escape intentionally rendered ACF rich-text content with `esc_html()`. Use an appropriate HTML allow-list such as `wp_kses_post()` when the value is not already guaranteed safe.

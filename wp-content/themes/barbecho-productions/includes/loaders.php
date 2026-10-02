@@ -7,7 +7,7 @@
  * @return array<string, string|null>
  */
 
-function bb_get_asset_data( $relative_path ) {
+function bp_get_asset_data( $relative_path ) {
     $relative_path = '/' . ltrim( $relative_path, '/' );
     $path          = get_stylesheet_directory() . $relative_path;
     return [
@@ -22,9 +22,9 @@ function bb_get_asset_data( $relative_path ) {
  * @return void
  */
 
-function barebones_enqueue_assets() {
-    $style  = bb_get_asset_data( '/style.css' );
-    $script = bb_get_asset_data( '/js/scripts.min.js' );
+function barbecho_enqueue_assets() {
+    $style  = bp_get_asset_data( '/style.css' );
+    $script = bp_get_asset_data( '/js/scripts.min.js' );
 
     wp_enqueue_style(
         'bb-styles',
@@ -45,4 +45,4 @@ function barebones_enqueue_assets() {
     );
 }
 
-add_action( 'wp_enqueue_scripts', 'barebones_enqueue_assets' );
+add_action( 'wp_enqueue_scripts', 'barbecho_enqueue_assets' );

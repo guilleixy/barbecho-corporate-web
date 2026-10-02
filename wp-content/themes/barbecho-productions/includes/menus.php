@@ -6,14 +6,14 @@
  * @return void
  */
 
-function barebones_register_nav_menus() {
+function barbecho_register_nav_menus() {
     register_nav_menus([
         'header' => 'Header',
         'footer' => 'Footer',
     ]);
 }
 
-add_action( 'after_setup_theme', 'barebones_register_nav_menus', 0 );
+add_action( 'after_setup_theme', 'barbecho_register_nav_menus', 0 );
 
 
 /**
@@ -23,7 +23,7 @@ add_action( 'after_setup_theme', 'barebones_register_nav_menus', 0 );
  * @return void
  */
 
-function barebones_nav_menu_args( $args ) {
+function barbecho_nav_menu_args( $args ) {
     $args['container'] = false;
     $args['container_class'] = false;
     $args['menu_id'] = false;
@@ -32,6 +32,4 @@ function barebones_nav_menu_args( $args ) {
     return $args;
 }
 
-add_filter('wp_nav_menu_args', 'barebones_nav_menu_args');
-
-
+add_filter('wp_nav_menu_args', 'barbecho_nav_menu_args');

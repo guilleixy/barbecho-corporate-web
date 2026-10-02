@@ -30,8 +30,8 @@ add_action( 'after_setup_theme', 'editor_styles' );
  * @return void
  */
 
-function bb_enqueue_editor_assets() {
-    $style = bb_get_asset_data( '/css/editor-styles.css' );
+function bp_enqueue_editor_assets() {
+    $style = bp_get_asset_data( '/css/editor-styles.css' );
 
     wp_enqueue_style(
         'bb-editor-styles',
@@ -41,7 +41,7 @@ function bb_enqueue_editor_assets() {
     );
 }
 
-add_action( 'enqueue_block_editor_assets', 'bb_enqueue_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'bp_enqueue_editor_assets' );
 
 
 /**
@@ -50,7 +50,7 @@ add_action( 'enqueue_block_editor_assets', 'bb_enqueue_editor_assets' );
  * @return void
  */
 
-function bb_register_blocks() {
+function bp_register_blocks() {
 	$blocks = glob( get_stylesheet_directory() . '/blocks/*/block.json' );
 	if ($blocks)
 	{
@@ -61,7 +61,7 @@ function bb_register_blocks() {
 	}
 }
 
-add_action( 'init', 'bb_register_blocks' );
+add_action( 'init', 'bp_register_blocks' );
 
 
 /**
@@ -95,7 +95,7 @@ add_filter('allowed_block_types_all', function ($allowed_blocks, $editor_context
  * @return void
  */
 
-function bb_block_asset_versioning( $src, $handle = '' ) {
+function bp_block_asset_versioning( $src, $handle = '' ) {
     $theme_uri = get_template_directory_uri();
 
     if ( strpos( $src, $theme_uri ) !== 0 ) {
@@ -109,15 +109,15 @@ function bb_block_asset_versioning( $src, $handle = '' ) {
             remove_query_arg( 'ver', $src )
         )
     );
-    $asset         = bb_get_asset_data( $relative_path );
+    $asset         = bp_get_asset_data( $relative_path );
     $version       = $asset['version'] ? [ 'ver' => $asset['version'] ] : [];
 
     return add_query_arg( $version, remove_query_arg( 'ver', $asset['uri'] ) );
 
 }
 
-add_filter( 'style_loader_src', 'bb_block_asset_versioning', 10, 2 );
-add_filter( 'script_loader_src', 'bb_block_asset_versioning', 10, 2 );
+add_filter( 'style_loader_src', 'bp_block_asset_versioning', 10, 2 );
+add_filter( 'script_loader_src', 'bp_block_asset_versioning', 10, 2 );
 
 
 /**
@@ -135,7 +135,7 @@ add_filter( 'styles_inline_size_limit', '__return_zero' );
  * @return void
  */
 
-function bb_is_block_preview($block) {
+function bp_is_block_preview($block) {
     return ! empty( $block['data']['preview'] );
 }
 
@@ -146,7 +146,7 @@ function bb_is_block_preview($block) {
  * @return void
  */
 
-function bb_block_preview_image_src($block) {
+function bp_block_preview_image_src($block) {
     if ( empty( $block['example']['attributes']['data']['preview'] ) ) {
         return '';
     }

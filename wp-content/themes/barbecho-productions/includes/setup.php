@@ -2,7 +2,7 @@
 
 /**
  * Theme setup and cleanup
- * 
+ *
  * @return void
  */
 
@@ -20,7 +20,7 @@ function theme_setup() {
     // add_image_size( 'custom-size', 700, 200, true );
 
     // Localisation Support
-    load_theme_textdomain( 'barebones', get_template_directory() . '/languages' );
+    load_theme_textdomain( 'barbecho', get_template_directory() . '/languages' );
 
     // Hide admin bar
     add_filter( 'show_admin_bar', '__return_false' );

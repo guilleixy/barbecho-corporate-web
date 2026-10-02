@@ -7,14 +7,14 @@
  * @return void
  */
 
-function barebones_mce_buttons_2( $buttons ) {
+function barbecho_mce_buttons_2( $buttons ) {
     array_unshift( $buttons, 'styleselect' );
     $buttons[] = 'hr';
 
     return $buttons;
 }
 
-add_filter('mce_buttons_2', 'barebones_mce_buttons_2');
+add_filter('mce_buttons_2', 'barbecho_mce_buttons_2');
 
 
 /**
@@ -24,7 +24,7 @@ add_filter('mce_buttons_2', 'barebones_mce_buttons_2');
  * @return void
  */
 
-function barebones_tiny_mce_before_init( $settings ) {
+function barbecho_tiny_mce_before_init( $settings ) {
     $style_formats = [
         [
             'title' => 'Text Sizes',
@@ -58,7 +58,7 @@ function barebones_tiny_mce_before_init( $settings ) {
                     'title'    => 'XD',
                     'selector' => 'span, p',
                     'classes'  => 'text-xs'
-                ],                
+                ],
             ]
         ]
     ];
@@ -69,7 +69,7 @@ function barebones_tiny_mce_before_init( $settings ) {
     return $settings;
 }
 
-add_filter('tiny_mce_before_init', 'barebones_tiny_mce_before_init');
+add_filter('tiny_mce_before_init', 'barbecho_tiny_mce_before_init');
 
 
 /**
@@ -79,11 +79,11 @@ add_filter('tiny_mce_before_init', 'barebones_tiny_mce_before_init');
 function front_page_on_pages_menu() {
     global $submenu;
     if ( get_option( 'page_on_front' ) ) {
-        $submenu['edit.php?post_type=page'][501] = array( 
-            __( 'Front Page', 'barebones' ), 
-            'manage_options', 
+        $submenu['edit.php?post_type=page'][501] = array(
+            __( 'Front Page', 'barbecho' ),
+            'manage_options',
             get_edit_post_link( get_option( 'page_on_front' ) )
-        ); 
+        );
     }
 }
 

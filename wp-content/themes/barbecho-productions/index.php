@@ -3,7 +3,7 @@
 <main class="main" role="main">
     <div class="container">
 
-        <h1 class="text-2xl">Welcome to Barebones</h1>
+        <h1 class="text-2xl">Welcome to barbecho</h1>
 
         <div class="row">
             <div class="col col--lg-12 col--md-12 col--sm-12 col--xs-12">
@@ -13,7 +13,7 @@
                 <p class="text-md">Text MD</p>
                 <p class="text-sm">Text SM</p>
                 <p class="text-xs">Text XS</p>
-            </div>          
+            </div>
         </div>
 
     </div>
