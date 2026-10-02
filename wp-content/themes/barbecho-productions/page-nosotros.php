@@ -1,10 +1,11 @@
 <?php get_header(); ?>
 
-<main class="main" role="main">
-    <section>
-
-        <div class="js-split-up">Nosotros</div>
-    </section>
+<main class="nosotros" role="main">
+<?php
+get_template_part('template-parts/hero', null, [
+    'title' => 'Nosotros'
+])
+?>
 
 </main>
 

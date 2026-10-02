@@ -2023,6 +2023,30 @@ img .float-center {
 /**
  * Font Sizes
  */
+.text-6xl {
+  font-size: 72px;
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.text-5xl {
+  font-size: 60px;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-4xl {
+  font-size: 48px;
+  font-size: 3rem;
+  line-height: 1.05;
+}
+
+.text-3xl {
+  font-size: 40px;
+  font-size: 2.5rem;
+  line-height: 1.1;
+}
+
 .text-2xl {
   font-size: 32px;
   font-size: 2rem;
@@ -2116,6 +2140,13 @@ img .float-center {
 
 .bg-danger {
   background-color: #D9534F;
+}
+
+/**
+ * Use pages/*.scss for page-specific styles
+ */
+.nosotros {
+  min-height: 500dvh;
 }
 
 .layout-grid {
@@ -2381,9 +2412,12 @@ hr {
   background-color: #E9E9E9;
 }
 
+main {
+  min-height: 100dvh;
+}
+
 .header {
-  padding: 24px 0;
-  margin-bottom: 48px;
+  height: 50px;
 }
 @media screen and (max-width: 1000px) {
   .header .header__navigation {
@@ -2565,4 +2599,23 @@ hr {
 .alert.alert--danger {
   color: #D9534F;
   border-color: #D9534F;
+}
+
+.hero {
+  height: calc(100dvh - 50px);
+}
+.hero__title {
+  font-size: 15rem;
+  font-family: "CabinetGrotesk-Black", "Times New Roman", Times, serif;
+  position: relative;
+  --line-scale: 0;
+}
+.hero__title:after {
+  content: "";
+  width: 4px;
+  background-color: #0B0909;
+  height: 100vh;
+  left: -50px;
+  top: var(--line-scale) px;
+  position: absolute;
 }

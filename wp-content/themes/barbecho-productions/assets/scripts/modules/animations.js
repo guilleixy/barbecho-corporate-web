@@ -5,6 +5,21 @@ import SplitText from "gsap/SplitText";
 gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(SplitText)
 
+const initHeaderLines = () => {
+  gsap.utils.toArray('.js-hero-lines').forEach((element) => {
+    gsap.to(element, {
+      '--line-scale': 100,
+      ease: 'power4.inOut',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 0%',
+        end: 'top 40%',
+        scrub: true,
+        markers: true,
+      }
+    })
+  })
+}
 
 const initFadeUp = () => {
   gsap.utils.toArray('.js-split-up').forEach((element) => {
@@ -12,7 +27,7 @@ const initFadeUp = () => {
 
     gsap.from(split.chars, {
       // autoAlpha: 0,
-      y: 40,
+      y: 200,
       duration: 0.8,
       ease: 'power2.out',
       stagger: 0.05,
@@ -30,4 +45,5 @@ export const initAnimations = () => {
   }
 
   initFadeUp()
+  initHeaderLines();
 }

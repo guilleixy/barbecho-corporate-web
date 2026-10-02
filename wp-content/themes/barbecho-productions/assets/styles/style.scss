@@ -26,6 +26,8 @@ Text Domain: barebones
 @use 'utils/defaults';
 
 // 5. Layouts
+@use 'pages/home';
+@use 'pages/nosotros';
 
 // Base stuff
 @use 'base/layouts';
@@ -44,3 +46,4 @@ Text Domain: barebones
 @use 'components/buttons';
 @use 'components/nav';
 @use 'components/alerts';
+@use 'components/hero';
