@@ -63,28 +63,37 @@ export default defineConfig(({ mode }) => {
     addBlockEntries(entries, '.js', 'js/blocks');
     addBlockEntries(entries, '.scss', 'css/blocks');
 
-    return {
-        plugins: [publishThemeAssets()],
-        build: {
-            cssCodeSplit: true,
-            cssTarget: 'chrome61',
-            minify: mode === 'development' ? false : 'oxc',
-            outDir: buildDirectory,
-            rollupOptions: {
-                input: entries,
-                output: {
-                    assetFileNames: '[name][extname]',
-                    entryFileNames: '[name].js',
-                },
-            },
-            sourcemap: mode === 'development',
-        },
-        css: {
-            preprocessorOptions: {
-                scss: {
-                    loadPaths: [themeRoot],
-                },
-            },
-        },
-    };
+  return {
+    base: './',
+      plugins: [publishThemeAssets()],
+      build: {
+          cssCodeSplit: true,
+          cssTarget: 'chrome61',
+          minify: mode === 'development' ? false : 'oxc',
+          outDir: buildDirectory,
+          rollupOptions: {
+              input: entries,
+            output: {
+              assetFileNames: (assetInfo) => {
+                const name = assetInfo.names?.[0] ?? '';
+
+                if (/\.(woff2?|ttf|otf|eot)$/.test(name)) {
+                  return 'fonts/[name][extname]'
+                }
+                return '[name][extname]'
+              },
+                  //assetFileNames: '[name][extname]',
+              entryFileNames: '[name].js',
+              },
+          },
+          sourcemap: mode === 'development',
+      },
+      css: {
+          preprocessorOptions: {
+              scss: {
+                  loadPaths: [themeRoot],
+              },
+          },
+      },
+  };
 });
