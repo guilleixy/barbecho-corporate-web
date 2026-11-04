@@ -33,21 +33,23 @@ const animateHero = (hero) => {
   })
 
   if (lineHorizontal) {
-    intro.to(lineHorizontal, { scaleX: 0, ease: 'none' }, 0);
+    intro.to(lineHorizontal, { scaleX: 0, ease: 'power2.inOut' }, 0);
+    intro.to(lineHorizontal, { y: -100, ease: 'power2.inOut' }, 0);
   }
 
   if (lineVertical) {
-    intro.to(lineVertical, { scaleY: 0, ease: 'none' }, 0);
+    intro.to(lineVertical, { scaleY: 0, ease: 'power2.inOut' }, 0);
+    intro.to(lineVertical, { x: 100, ease: 'power2.inOut' }, 0);
   }
 
   gsap.to(split.chars, {
-    yPercent: -100,
+    yPercent: -110,
     ease: 'none',
-    stagger: { each: 0.05, from: 'end' },
+    stagger: { each: 0.03, from: 'start' },
     scrollTrigger: {
       trigger: hero,
-      start: () => intro.scrollTrigger.end,
-      end: () => intro.scrollTrigger.end + window.innerHeight * 0.6,
+      start: () => intro.scrollTrigger.end - window.innerHeight * 0.2,
+      end: () => intro.scrollTrigger.end + window.innerHeight * 0.2,
       scrub: true,
     }
   })
