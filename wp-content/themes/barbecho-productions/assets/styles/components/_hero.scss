@@ -10,15 +10,18 @@
     justify-content: flex-end;
     &__title {
         font-size: 16rem;
-        font-family: 'CabinetGrotesk-Black', 'Times New Roman', Times, serif;
+        font-family: 'CabinetGrotesk', 'Times New Roman', Times, serif;
         position: relative;
+        font-weight: 900;
         z-index: 1;
+        //margin-top: calc($header-height + 100px);
+        margin-top: 700px;
     }
     &__vertical-line {
         height: 100%;
         width: $line-width;
         left: -50px;
-        top: 0;
+        top: $header-height;
         transform-origin: top;
     }
     &__bottom-offset {

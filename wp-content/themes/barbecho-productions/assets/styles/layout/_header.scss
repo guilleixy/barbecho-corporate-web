@@ -4,9 +4,19 @@
 .header {
 	// padding: $base-spacing-unit 0;
 	height: $header-height;
-	position: sticky;
+	position: fixed;
 	top: 0;
 	z-index: 10;
+	background-color: map.get($colors, 'brand');
+	width: 100%;
+	&:after {
+		content: "";
+		height: $line-width;
+		background-color: map.get($colors, 'background');
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+	}
 	.header__navigation {
 		@include resp-max($breakpoint-nav) {
 			display: none;

@@ -392,56 +392,56 @@ Text Domain: barbecho
 *
 */
 @font-face {
-  font-family: "CabinetGrotesk-Thin";
+  font-family: "CabinetGrotesk";
   src: url("./fonts/CabinetGrotesk-Thin.woff2") format("woff2"), url("./fonts/CabinetGrotesk-Thin.woff") format("woff"), url("./fonts/CabinetGrotesk-Thin.ttf") format("truetype");
   font-weight: 100;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: "CabinetGrotesk-Extralight";
+  font-family: "CabinetGrotesk";
   src: url("./fonts/CabinetGrotesk-Extralight.woff2") format("woff2"), url("./fonts/CabinetGrotesk-Extralight.woff") format("woff"), url("./fonts/CabinetGrotesk-Extralight.ttf") format("truetype");
   font-weight: 200;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: "CabinetGrotesk-Light";
+  font-family: "CabinetGrotesk";
   src: url("./fonts/CabinetGrotesk-Light.woff2") format("woff2"), url("./fonts/CabinetGrotesk-Light.woff") format("woff"), url("./fonts/CabinetGrotesk-Light.ttf") format("truetype");
   font-weight: 300;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: "CabinetGrotesk-Regular";
+  font-family: "CabinetGrotesk";
   src: url("./fonts/CabinetGrotesk-Regular.woff2") format("woff2"), url("./fonts/CabinetGrotesk-Regular.woff") format("woff"), url("./fonts/CabinetGrotesk-Regular.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: "CabinetGrotesk-Medium";
+  font-family: "CabinetGrotesk";
   src: url("./fonts/CabinetGrotesk-Medium.woff2") format("woff2"), url("./fonts/CabinetGrotesk-Medium.woff") format("woff"), url("./fonts/CabinetGrotesk-Medium.ttf") format("truetype");
   font-weight: 500;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: "CabinetGrotesk-Bold";
+  font-family: "CabinetGrotesk";
   src: url("./fonts/CabinetGrotesk-Bold.woff2") format("woff2"), url("./fonts/CabinetGrotesk-Bold.woff") format("woff"), url("./fonts/CabinetGrotesk-Bold.ttf") format("truetype");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: "CabinetGrotesk-Extrabold";
+  font-family: "CabinetGrotesk";
   src: url("./fonts/CabinetGrotesk-Extrabold.woff2") format("woff2"), url("./fonts/CabinetGrotesk-Extrabold.woff") format("woff"), url("./fonts/CabinetGrotesk-Extrabold.ttf") format("truetype");
   font-weight: 800;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: "CabinetGrotesk-Black";
+  font-family: "CabinetGrotesk";
   src: url("./fonts/CabinetGrotesk-Black.woff2") format("woff2"), url("./fonts/CabinetGrotesk-Black.woff") format("woff"), url("./fonts/CabinetGrotesk-Black.ttf") format("truetype");
   font-weight: 900;
   font-display: swap;
@@ -464,11 +464,10 @@ Text Domain: barbecho
 }
 body {
   color: #0B0909;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "CabinetGrotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5;
   min-height: 100dvh;
   text-size-adjust: none;
-  font-family: "CabinetGrotesk-Regular", "Times New Roman", Times, serif;
   background-color: #D62329;
   overflow-x: hidden;
   font-size: 16px;
@@ -2012,7 +2011,7 @@ img .float-center {
  * Fonts
  */
 .font-base {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "CabinetGrotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .font-alt {
@@ -2417,9 +2416,19 @@ main {
 
 .header {
   height: 12dvh;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 10;
+  background-color: #D62329;
+  width: 100%;
+}
+.header:after {
+  content: "";
+  height: 4px;
+  background-color: #0B0909;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 @media screen and (max-width: 1000px) {
   .header .header__navigation {
@@ -2612,15 +2621,17 @@ main {
 }
 .hero__title {
   font-size: 16rem;
-  font-family: "CabinetGrotesk-Black", "Times New Roman", Times, serif;
+  font-family: "CabinetGrotesk", "Times New Roman", Times, serif;
   position: relative;
+  font-weight: 900;
   z-index: 1;
+  margin-top: 700px;
 }
 .hero__vertical-line {
   height: 100%;
   width: 4px;
   left: -50px;
-  top: 0;
+  top: 12dvh;
   transform-origin: top;
 }
 .hero__bottom-offset {
