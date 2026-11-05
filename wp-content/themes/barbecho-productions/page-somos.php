@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
-<main class="nosotros" role="main">
+<main class="somos" role="main">
 <?php
 get_template_part('template-parts/hero', null, [
-    'title' => 'Nosotros'
+    'title' => 'Somos'
 ])
 ?>
 
