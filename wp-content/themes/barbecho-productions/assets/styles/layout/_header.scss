@@ -8,7 +8,9 @@
 	top: 0;
 	z-index: 10;
 	background-color: map.get($colors, 'brand');
+	color: map.get($colors, 'background');
 	width: 100%;
+
 	&:after {
 		content: "";
 		height: $line-width;
@@ -18,6 +20,11 @@
 		bottom: 0;
 	}
 	.header__navigation {
+	    display: flex;
+		width: 100%;
+		height: 100%;
+		align-items: flex-end;
+		justify-content: flex-end;
 		@include resp-max($breakpoint-nav) {
 			display: none;
 			position: fixed;
@@ -25,17 +32,9 @@
 			top: 0;
 			width: 100%;
 			height: 100%;
-			background-color: map.get($colors, 'background');
+			background-color: map.get($colors, 'brand');
 			nav {
-				display: flex;
-				height: 100%;
-				align-items: center;
-				justify-content: center;
 			}
 		}
-	}
-	.header__logo {
-		position: relative;
-		z-index: 2;
 	}
 }

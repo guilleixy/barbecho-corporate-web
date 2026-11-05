@@ -2143,7 +2143,7 @@ img .float-center {
 /**
  * Use pages/*.scss for page-specific styles
  */
-.nosotros {
+.somos {
   min-height: 500dvh;
 }
 
@@ -2386,11 +2386,10 @@ dl:last-child {
  * Basic styles for links
  */
 a {
-  color: #E9E9E9;
+  color: #0B0909;
   text-decoration: none;
 }
 a:hover {
-  color: #E9E9E9;
   text-decoration: underline;
 }
 
@@ -2420,6 +2419,7 @@ main {
   top: 0;
   z-index: 10;
   background-color: #D62329;
+  color: #0B0909;
   width: 100%;
 }
 .header:after {
@@ -2430,6 +2430,13 @@ main {
   position: absolute;
   bottom: 0;
 }
+.header .header__navigation {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
 @media screen and (max-width: 1000px) {
   .header .header__navigation {
     display: none;
@@ -2438,18 +2445,8 @@ main {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #0B0909;
+    background-color: #D62329;
   }
-  .header .header__navigation nav {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-}
-.header .header__logo {
-  position: relative;
-  z-index: 2;
 }
 
 .footer {
@@ -2539,7 +2536,7 @@ main {
 .nav-burger__line {
   width: 25px;
   height: 2px;
-  background-color: #D62329;
+  background-color: #0B0909;
   display: none;
   margin: 5px auto;
   transition: all 250ms ease-in-out;
@@ -2565,10 +2562,11 @@ main {
 .nav {
   list-style: none;
   margin: 0;
+  display: flex;
+  gap: 12px;
 }
 .nav > li {
   display: inline-block;
-  margin-right: 24px;
 }
 .nav > li:last-child {
   margin-right: 0;

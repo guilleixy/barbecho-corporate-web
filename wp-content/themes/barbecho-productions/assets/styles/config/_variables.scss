@@ -56,12 +56,12 @@ $colors: (
  */
 
  $spacings: (
-    'xl' ($base-spacing-unit * 4),
-    'lg' ($base-spacing-unit * 3),
-    'md' ($base-spacing-unit * 2),
-    'sm' ($base-spacing-unit * 1),
-    'xs' ($base-spacing-unit * 0.5),
-    'none' 0,
+    'xl': ($base-spacing-unit * 4),
+    'lg': ($base-spacing-unit * 3),
+    'md': ($base-spacing-unit * 2),
+    'sm': ($base-spacing-unit * 1),
+    'xs': ($base-spacing-unit * 0.5),
+    'none': 0,
 );
 
  /**

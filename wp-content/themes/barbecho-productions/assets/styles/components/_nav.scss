@@ -15,7 +15,7 @@
 .nav-burger__line {
     width: 25px;
     height: 2px;
-    background-color: map.get($colors, 'brand');
+    background-color: map.get($colors, 'background');
     display: none;
     margin: 5px auto;
     transition: all $animation-speed $animation;
@@ -47,10 +47,11 @@
 .nav {
     list-style: none;
     margin: 0;
-
+    display: flex;
+    gap: map.get($spacings, 'xs');
     > li {
         display: inline-block;
-        margin-right: $base-spacing-unit;
+        // margin-right: $base-spacing-unit;
 
         &:last-child {
             margin-right: 0;
