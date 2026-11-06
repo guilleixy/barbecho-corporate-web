@@ -2,3 +2,20 @@
  * Use pages/*.scss for page-specific styles
  */
 @use "sass:map";
+@use '../config' as *;
+
+.claim-section {
+    background-color: map.get($colors, 'background');
+    color: map.get($colors, 'base');
+    min-height: 100vh;
+}
+
+.claim-section-end {
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0 100%);
+    background-color: map.get($colors, 'background');
+    min-height: 40vh;
+}
+
+.projects-section {
+    min-height: 100vh;
+}

@@ -1,5 +1,6 @@
 @use "sass:map";
-
+@use '../config' as *;
 main {
+    margin-top: $header-height;
     min-height: 100dvh;
 }

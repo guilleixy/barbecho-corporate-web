@@ -2143,6 +2143,22 @@ img .float-center {
 /**
  * Use pages/*.scss for page-specific styles
  */
+.claim-section {
+  background-color: #0B0909;
+  color: #E9E9E9;
+  min-height: 100vh;
+}
+
+.claim-section-end {
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 100%);
+  background-color: #0B0909;
+  min-height: 40vh;
+}
+
+.projects-section {
+  min-height: 100vh;
+}
+
 .somos {
   min-height: 500dvh;
 }
@@ -2410,6 +2426,7 @@ hr {
 }
 
 main {
+  margin-top: 12dvh;
   min-height: 100dvh;
 }
 
