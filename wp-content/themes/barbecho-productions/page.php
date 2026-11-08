@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+get_header();
+$featured_projects = get_field('featured-projects');
+?>
 
 <main class="main" role="main">
     <section class="claim-section">
@@ -14,9 +17,54 @@
         <img src="https://static.photos/cat"/>
         <img src="https://static.photos/cat"/>
     </div>
-    <section class="projects-section">
+    <?php if ($featured_projects) : ?>
+        <section class="projects-showcase-section">
+            <h3>Proyectos destacados</h3>
+            <?php foreach ( $featured_projects as $post ) : ?>
+                <?php
+                    setup_postdata( $post );
+                    $thumbnail = get_field('thumbnail')
+                ?>
+                <article class="project-showcase">
+                    <div>
+                        <div class="projects-section__vertical-line">
+
+                        </div>
+                    </div>
+                    <h4 class="project-showcase__title">
+                        <?php the_title(); ?>
+                    </h4>
+                    <?php
+                    $miniatura_id = get_post_meta( get_the_ID(), '_bp_proyecto_miniatura', true );
+
+                    if ( $miniatura_id ) :
+                        $att_url  = wp_get_attachment_url( $miniatura_id );
+                        $att_type = get_post_mime_type( $miniatura_id );
+                        $is_video = ( $att_type && strpos( $att_type, 'video' ) !== false );
+                        ?>
+
+                        <div class="project-showcase__thumbnail">
+                            <div class="project-showcase__thumbnail__wrapper">
+                                <?php if ( $is_video ) : ?>
+                                    <video src="<?php echo esc_url( $att_url ); ?>" autoplay muted loop playsinline class="miniatura-video" style="max-width:100%; height:auto;"></video>
+                                <?php else : ?>
+                                    <?php
+                                    echo wp_get_attachment_image( $miniatura_id, 'medium', false, array( 'class' => 'miniatura-imagen' ) );
+                                    ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </article>
+            <?php endforeach; ?>
+            <?php wp_reset_postdata();?>
+        </section>
+    <?php endif; ?>
+
+    <section class="awards-section">
 
     </section>
+
     <?php while ( have_posts() ) : the_post(); ?>
 
         <?php the_content(); ?>

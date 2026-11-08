@@ -22,23 +22,10 @@ const initFadeUp = () => {
   })
 }
 
-const initClaimSectionEnd = () => {
-  gsap.to(".claim-section-end", {
-    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-    scrollTrigger: {
-      trigger: ".claim-section-end",
-      start: "top 50%",
-      end: "top 3%",
-      scrub: true
-    }
-  });
-}
-
 export const initAnimations = () => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     return;
   }
 
   initFadeUp()
-  initClaimSectionEnd()
 }

@@ -2155,8 +2155,48 @@ img .float-center {
   min-height: 40vh;
 }
 
-.projects-section {
+.projects-showcase-section {
+  margin-top: 30dvh;
   min-height: 100vh;
+}
+.projects-showcase-section .project-showcase {
+  height: 40dvh;
+  position: relative;
+}
+.projects-showcase-section .project-showcase .project-showcase__title {
+  background-color: #E9E9E9;
+  position: absolute;
+  padding: 24px 48px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.projects-showcase-section .project-showcase .project-showcase__thumbnail {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.projects-showcase-section .project-showcase .project-showcase__thumbnail .project-showcase__thumbnail__wrapper {
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  width: clamp(280px, 30dvw, 600px);
+  position: relative;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.projects-showcase-section .project-showcase .project-showcase__thumbnail .project-showcase__thumbnail__wrapper img,
+.projects-showcase-section .project-showcase .project-showcase__thumbnail .project-showcase__thumbnail__wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.awards-section {
+  min-height: 100dvh;
 }
 
 .somos {
@@ -2646,7 +2686,7 @@ main {
   height: 100%;
   width: 4px;
   left: -50px;
-  top: 12dvh;
+  top: 0;
   transform-origin: top;
 }
 .hero__bottom-offset {
