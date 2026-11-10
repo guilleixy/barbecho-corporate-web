@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Barbecho Extra Fields
  * Description: Plugin personalizado para añadir campos repetidores y funcionalidades extra.
- * Version: 1.4
+ * Version: 1.5
  * Author: Guillermo Bernal
  * Text Domain: barbecho
  */
