@@ -2672,37 +2672,57 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
+  width: 100%;
   justify-content: flex-end;
+  padding-left: 20%;
 }
 .hero__title {
-  font-size: 16rem;
+  font-size: 15rem;
   font-family: "CabinetGrotesk", "Times New Roman", Times, serif;
   position: relative;
   font-weight: 900;
   z-index: 1;
-  margin-top: 700px;
 }
 .hero__vertical-line {
   height: 100%;
   width: 4px;
-  left: -50px;
+  left: 15%;
   top: 0;
   transform-origin: top;
 }
 .hero__bottom-offset {
   position: relative;
   background-color: #D62329;
-  height: 20%;
+  height: 15%;
   z-index: 2;
 }
 .hero__bottom-offset__horizontal-line {
   height: 4px;
   width: 100dvw;
-  top: 0;
-  left: calc(50% - 50vw);
+  top: -4px;
+  left: -25%;
   transform-origin: right;
 }
 .hero__line {
   background-color: #0B0909;
   position: absolute;
+}
+.hero__thumbnail {
+  overflow: hidden;
+  width: 15%;
+  position: absolute;
+  height: 15%;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  transform-origin: bottom left;
+}
+.hero__thumbnail img,
+.hero__thumbnail video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
