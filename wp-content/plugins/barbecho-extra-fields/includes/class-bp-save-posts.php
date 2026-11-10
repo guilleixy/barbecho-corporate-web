@@ -136,3 +136,29 @@ function bp_guardar_galeria_prensa($post_id) {
     }
 }
 add_action('save_post', 'bp_guardar_galeria_prensa');
+
+function bp_guardar_page_hero($post_id) {
+    if (!isset($_POST['bp_page_hero_nonce_field']) || !wp_verify_nonce($_POST['bp_page_hero_nonce_field'], 'bp_guardar_page_hero_nonce')) {
+        return;
+    }
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+
+    if (isset($_POST['bp_page_hero_texto'])) {
+        update_post_meta($post_id, '_bp_page_hero_texto', sanitize_text_field($_POST['bp_page_hero_texto']));
+    }
+
+    if (isset($_POST['bp_page_hero_media_id'])) {
+        $media_id = intval($_POST['bp_page_hero_media_id']);
+        if ($media_id > 0) {
+            update_post_meta($post_id, '_bp_page_hero_media_id', $media_id);
+        } else {
+            delete_post_meta($post_id, '_bp_page_hero_media_id');
+        }
+    }
+}
+add_action('save_post', 'bp_guardar_page_hero');
