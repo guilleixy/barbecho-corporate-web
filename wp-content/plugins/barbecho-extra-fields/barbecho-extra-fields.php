@@ -16,3 +16,4 @@ define('BP_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 require_once BP_PLUGIN_DIR . 'includes/class-bp-meta-boxes.php';
 require_once BP_PLUGIN_DIR . 'includes/class-bp-save-posts.php';
+require_once BP_PLUGIN_DIR . 'includes/class-bp-hero-global.php';

@@ -48,6 +48,15 @@ function bp_custom_repeater_meta_boxes() {
         'normal',
         'default'
     );
+
+    add_meta_box(
+        'bp_page_hero_box',
+        __('Configuración de Hero (Página)', 'barbecho'),
+        'bp_page_hero_html',
+        'page',
+        'normal',
+        'default'
+    );
 }
 add_action('add_meta_boxes', 'bp_custom_repeater_meta_boxes');
 
@@ -70,6 +79,8 @@ function bp_galeria_fotogramas_html($post) {
 function bp_galeria_prensa_html($post) {
     include BP_PLUGIN_DIR . 'admin/views/prensa.php';
 }
+
+function bp_page_hero_html($post) { include BP_PLUGIN_DIR . 'admin/views/hero-page.php'; }
 
 add_action('admin_footer', function() {
     ?>
