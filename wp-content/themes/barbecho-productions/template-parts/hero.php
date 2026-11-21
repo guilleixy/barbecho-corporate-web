@@ -4,9 +4,9 @@ $thumbnail_id = $args['thumbnail_id'];
 ?>
 <section class="hero js-hero">
     <div class="js-hero-line-horizontal hero__horizontal-line"></div>
+    <div class="js-hero-line-vertical hero__vertical-line"></div>
     <div class="js-hero-top-right hero__top-right">
         <div class="hero__top-right__wrapper">
-            <div class="js-hero-line-vertical hero__vertical-line"></div>
             <h1 class="hero__title js-hero-title">
                 <?php echo esc_html( $title ); ?>
             </h1>
