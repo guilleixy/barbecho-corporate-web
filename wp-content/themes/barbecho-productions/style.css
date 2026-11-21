@@ -2670,38 +2670,70 @@ main {
 .hero {
   height: 88dvh;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: flex-end;
-  padding-left: 20%;
 }
 .hero__title {
   font-size: 15rem;
-  font-family: "CabinetGrotesk", "Times New Roman", Times, serif;
+  font-family: "CabinetGrotesk", "Helvetica Neue", Helvetica, Arial, sans-serif, "Times New Roman", Times, serif;
   position: relative;
   font-weight: 900;
   z-index: 1;
+  white-space: nowrap;
+  transform-origin: left;
+}
+.hero__top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 70%;
+  z-index: 1;
+}
+.hero__top-right__wrapper {
+  width: 100%;
+  height: 100%;
+  transform-origin: top right;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+.hero__bottom-left {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  width: 30%;
+  height: 30%;
+  transform-origin: bottom left;
+}
+.hero__bottom-right {
+  position: absolute;
+  top: 70%;
+  right: 0;
+  width: 70%;
+  height: 30%;
+  transform-origin: top right;
+  z-index: 2;
+  background-color: #D62329;
 }
 .hero__vertical-line {
-  height: 100%;
+  height: 88dvh;
   width: 4px;
-  left: 15%;
-  top: 0;
+  background-color: #0B0909;
   transform-origin: top;
+  position: absolute;
+  display: block;
+  top: 0;
+  z-index: 3;
 }
-.hero__bottom-offset {
-  position: relative;
-  background-color: #D62329;
-  height: 15%;
-  z-index: 2;
-}
-.hero__bottom-offset__horizontal-line {
-  height: 4px;
+.hero__horizontal-line {
   width: 100dvw;
-  top: -4px;
-  left: -25%;
-  transform-origin: right;
+  left: 0;
+  height: 4px;
+  background-color: #0B0909;
+  transform-origin: top;
+  position: absolute;
+  display: block;
+  top: calc(70% - 4px);
+  z-index: 3;
 }
 .hero__line {
   background-color: #0B0909;
@@ -2709,9 +2741,9 @@ main {
 }
 .hero__thumbnail {
   overflow: hidden;
-  width: 15%;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  height: 15%;
   bottom: 0;
   left: 0;
   z-index: 3;

@@ -4,39 +4,76 @@
 .hero {
     height: calc(100dvh - $header-height);
     position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: flex-end;
-    padding-left: 20%;
     &__title {
         font-size: 15rem;
-        font-family: 'CabinetGrotesk', 'Times New Roman', Times, serif;
+        font-family: $base-font-family, 'Times New Roman', Times, serif;
         position: relative;
         font-weight: 900;
         z-index: 1;
+        white-space: nowrap;
+        transform-origin: left;
     }
-    &__vertical-line {
-        height: 100%;
-        width: $line-width;
-        left: 15%;
+
+    &__top-right {
+        position: absolute;
         top: 0;
-        transform-origin: top;
-    }
-    &__bottom-offset {
-        position: relative;
-        background-color: map.get($colors, 'brand');
-        height: 15%;
-        z-index: 2;
-        &__horizontal-line {
-            height: $line-width;
-            width: 100dvw;
-            top: -$line-width;
-            //left:calc(50% - 50vw);
-            left: -25%;
-            transform-origin: right;
+        right: 0;
+        width: 70%;
+        height: 70%;
+        z-index: 1;
+        &__wrapper{
+            width: 100%;
+            height: 100%;
+            transform-origin: top right;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
         }
     }
+
+    &__bottom-left {
+        position: absolute;
+        top: 70%;
+        left: 0;
+        width: 30%;
+        height: 30%;
+        transform-origin: bottom left;
+    }
+
+    &__bottom-right {
+        position: absolute;
+        top: 70%;
+        right: 0;
+        width: 70%;
+        height: 30%;
+        transform-origin: top right;
+        z-index: 2;
+        background-color: map.get($colors, 'brand');
+    }
+
+    &__vertical-line {
+        height: calc(100dvh - $header-height);
+        width: $line-width;
+        background-color: map.get($colors, 'background');
+        transform-origin: top;
+        position: absolute;
+        display: block;
+        top: 0;
+        z-index: 3;
+    }
+
+    &__horizontal-line {
+        width: 100dvw;
+        left: 0;
+        height: $line-width;
+        background-color: map.get($colors, 'background');
+        transform-origin: top;
+        position: absolute;
+        display: block;
+        top: calc(70% - $line-width);
+        z-index: 3;
+    }
+
     &__line {
         background-color: map.get($colors, 'background');
         position: absolute;
@@ -46,9 +83,9 @@
         overflow: hidden;
         // min / valor // max
         //width: clamp(280px, 30dvw, 600px);
-        width: 15%;
+        width: 100%;
+        height: 100%;
         position: absolute;
-        height: 15%;
         bottom: 0;
         left: 0;
         z-index: 3;
@@ -63,5 +100,4 @@
             object-fit: cover;
         }
     }
-
 }

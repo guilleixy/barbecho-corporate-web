@@ -8,8 +8,9 @@ const animateHero = (hero) => {
   const title = hero.querySelector('.js-hero-title');
   const lineVertical = hero.querySelector('.js-hero-line-vertical');
   const lineHorizontal = hero.querySelector('.js-hero-line-horizontal');
-  const thumbnail = hero.querySelector('.js-hero-thumbnail');
-
+  const topRight = hero.querySelector('.js-hero-top-right')
+  const bottomLeft = hero.querySelector('.js-hero-bottom-left')
+  const bottomRight = hero.querySelector('.js-hero-bottom-right')
 
   if (!title) {
     return
@@ -31,7 +32,7 @@ const animateHero = (hero) => {
     scrollTrigger: {
       trigger: hero,
       start: `top ${headerOffset}px`,
-      end: '+=150%',
+      end: '+=100%',
       pin: true,
       scrub: true,
     }
@@ -57,22 +58,56 @@ if (lineHorizontal) {
     intro.to(lineVertical, { x: 2000, ease: 'power2.inOut' }, 0);
   }
 
+  // if (split.chars) {
+  //   intro.to(split.chars, {
+  //     fontSize: '900px',
+  //     ease: 'power2.out',
+  //   }, 0);
+  // }
+
   if (split.chars) {
     intro.to(split.chars, {
-      yPercent: -300,
-      ease: 'power2.out',
-      stagger: { each: 0.02, from: 'start' },
+      fontSize: '2000px',
+      //y: 500,
+      ease: 'none',
+      stagger: { each: 0.01, from: 'start' },
     }, 0)
   }
 
-  if (thumbnail) {
-    intro.to(thumbnail, {
-      height: '100%',
-      width: '100%',
-      ease: 'power2.out',
-    }, 0.1)
+  if (title) {
+    intro.to(title, {
+      y: 1300,
+      // x: -1000,
+      ease: 'none',
+    }, 0)
   }
 
+  // if (thumbnail) {
+  //   intro.to(thumbnail, {
+  //     height: '100%',
+  //     width: '100%',
+  //     ease: 'power2.out',
+  //   }, 0.1)
+  // }
+
+  intro.to(topRight, {
+    y: '-100%',
+    x: '100%',
+    ease: 'power2.out'
+  }, 0.1);
+
+  intro.to(bottomRight, {
+    x: '100%',
+    ease: 'power2.out'
+  }, 0.1);
+
+  intro.to(bottomLeft, {
+    top: 0,
+    left: 0,
+    width: '95%', // TODO: poner para que coincida con header
+    height: '100%',
+    ease: 'power2.inOut'
+  }, 0.05);
 }
 
 export const initHero = () => {
