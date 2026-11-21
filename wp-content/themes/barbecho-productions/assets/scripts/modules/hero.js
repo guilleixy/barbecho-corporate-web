@@ -51,11 +51,17 @@ const animateHero = (hero) => {
 
 // VERSION CON IMG
 if (lineHorizontal) {
-  intro.to(lineHorizontal, { y: -1000, ease: 'power2.inOut' }, 0);
+  intro.to(lineHorizontal, {
+    top: '-0.3%',
+    ease: 'power2.inOut'
+  }, 0.05);
 }
 
   if (lineVertical) {
-    intro.to(lineVertical, { x: 2000, ease: 'power2.inOut' }, 0);
+    intro.to(lineVertical, {
+      left: '95%',
+      ease: 'power2.inOut'
+    }, 0.05);
   }
 
   // if (split.chars) {
