@@ -56,6 +56,11 @@
     text-align: center;
 }
 
+.with-leading-slash::before {
+    content: "/";
+    margin-right: 0.25em;
+}
+
 
 /**
 * Aligments

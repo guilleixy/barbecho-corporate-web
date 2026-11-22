@@ -660,6 +660,11 @@ img .float-center {
   text-align: center;
 }
 
+.with-leading-slash::before {
+  content: "/";
+  margin-right: 0.25em;
+}
+
 /**
 * Aligments
 */
@@ -2207,6 +2212,61 @@ img .float-center {
 
 .awards-section {
   min-height: 100dvh;
+}
+
+.news-section {
+  background-color: #D62329;
+  color: #0B0909;
+  padding: 48px;
+}
+.news-section__title {
+  margin: 0 0 48px;
+}
+.news-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 72px;
+}
+.news-section__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 48px;
+}
+@media screen and (max-width: 1024px) {
+  .news-section__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media screen and (max-width: 768px) {
+  .news-section__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.news-card {
+  min-width: 0;
+}
+.news-card__link {
+  color: inherit;
+  text-decoration: none;
+}
+.news-card__thumbnail {
+  aspect-ratio: 16/9;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.news-card__thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.news-card__title {
+  margin: 0;
+}
+.news-card__date {
+  display: block;
+  margin-top: 12px;
+  text-align: right;
 }
 
 .somos {

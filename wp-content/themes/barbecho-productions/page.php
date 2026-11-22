@@ -75,12 +75,47 @@ $featured_projects = get_field('featured-projects');
 
     </section>
 
-    <?php while ( have_posts() ) : the_post(); ?>
+    <?php
+    $news_query = new WP_Query([
+        'post_type'      => 'post',
+        'post_status'    => 'publish',
+        'posts_per_page' => 3,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    ]);
+    ?>
+    <?php if ($news_query->have_posts()) : ?>
+        <section class="news-section">
+            <h2 class="news-section__title text-3xl with-leading-slash">Novedades</h2>
 
-        <?php the_content(); ?>
+            <div class="news-section__grid">
+                <?php while ($news_query->have_posts()) : $news_query->the_post(); ?>
+                    <article class="news-card">
+                        <a class="news-card__link" href="<?php the_permalink(); ?>">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <div class="news-card__thumbnail">
+                                    <?php the_post_thumbnail('large'); ?>
+                                </div>
+                            <?php endif; ?>
 
-    <?php endwhile; ?>
+                            <h3 class="news-card__title text-lg"><?php the_title(); ?></h3>
+                        </a>
 
+                        <time class="news-card__date text-xs" datetime="<?php echo esc_attr(get_the_date('c')); ?>">
+                            <?php echo esc_html(get_the_date('d/m/Y')); ?>
+                        </time>
+                    </article>
+                <?php endwhile; ?>
+            </div>
+
+            <div class="news-section__actions">
+                <a class="btn btn--inverse" href="<?php echo esc_url(home_url('/Noticias')); ?>">
+                    Ver más
+                </a>
+            </div>
+        </section>
+        <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
 </main>
 
 <?php get_footer(); ?>
