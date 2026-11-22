@@ -462,6 +462,16 @@ Text Domain: barbecho
   font-display: swap;
   font-style: normal;
 }
+::selection {
+  color: #E9E9E9;
+  background-color: rgb(126.3373493976, 20.6626506024, 24.2048192771);
+}
+
+::-moz-selection {
+  color: #E9E9E9;
+  background-color: rgb(126.3373493976, 20.6626506024, 24.2048192771);
+}
+
 body {
   color: #0B0909;
   font-family: "CabinetGrotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;

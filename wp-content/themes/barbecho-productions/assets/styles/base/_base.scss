@@ -1,5 +1,16 @@
 @use "sass:map";
+@use "sass:color";
 @use '../config' as *;
+
+::selection {
+    color: map.get($colors, 'base');
+    background-color: color.adjust(map.get($colors, 'brand'), $lightness: -20%);
+}
+
+::-moz-selection {
+    color: map.get($colors, 'base');
+    background-color: color.adjust(map.get($colors, 'brand'), $lightness: -20%);
+}
 
 body {
     color: map.get($colors, 'background');
