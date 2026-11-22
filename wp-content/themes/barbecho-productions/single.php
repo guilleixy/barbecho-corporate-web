@@ -36,7 +36,7 @@
 
     <?php
     $other_news = new WP_Query([
-        'post_type'      => 'post',
+        'post_type'      => 'noticia',
         'post_status'    => 'publish',
         'posts_per_page' => 3,
         'post__not_in'   => [get_queried_object_id()],

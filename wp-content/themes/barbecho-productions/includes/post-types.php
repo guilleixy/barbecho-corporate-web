@@ -18,36 +18,52 @@ function bp_register_projects() {
 
 add_action( 'init', 'bp_register_projects' );
 
-function bp_noticias_rewrite() {
-    add_rewrite_rule(
-        '^noticias/([^/]+)/?$',
-        'index.php?name=$matches[1]',
-        'top'
-    );
+function bp_register_noticias() {
+    register_post_type('noticia', [
+        'labels' => [
+            'name' => __('Noticias', 'barbecho'),
+            'singular_name' => __('Noticia', 'barbecho'),
+            'add_new_item' => __('Añadir noticia', 'barbecho'),
+            'add_new' => __('Añadir noticia', 'barbecho'),
+        ],
+        'public' => true,
+        'has_archive' => 'noticias',
+        'rewrite' => ['slug' => 'noticias'],
+        'menu_icon' => 'dashicons-megaphone',
+        'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+        'taxonomies' => ['category', 'post_tag'],
+        'show_in_rest' => true,
+        'show_in_nav_menus' => true,
+        'show_ui' => true,
+    ]);
 }
 
-add_action('init', 'bp_noticias_rewrite');
+add_action('init', 'bp_register_noticias');
 
-function bp_noticias_post_link($permalink, $post) {
-    if ($post && $post->post_type === 'post') {
-        return home_url('/noticias/' . $post->post_name . '/');
+function bp_migrate_posts_to_noticias() {
+    if (get_option('bp_noticias_migrated_v1')) {
+        return;
     }
 
-    return $permalink;
-}
+    $posts = get_posts([
+        'post_type' => 'post',
+        'post_status' => 'any',
+        'numberposts' => -1,
+        'fields' => 'ids',
+    ]);
 
-add_filter('post_link', 'bp_noticias_post_link', 10, 2);
-
-function bp_noticias_flush_rewrite_rules() {
-    $rewrite_version = 'noticias-permalink-v1';
-
-    if (get_option('bp_noticias_rewrite_version') !== $rewrite_version) {
-        flush_rewrite_rules();
-        update_option('bp_noticias_rewrite_version', $rewrite_version);
+    foreach ($posts as $post_id) {
+        wp_update_post([
+            'ID' => $post_id,
+            'post_type' => 'noticia',
+        ]);
     }
+
+    flush_rewrite_rules();
+    update_option('bp_noticias_migrated_v1', '1');
 }
 
-add_action('init', 'bp_noticias_flush_rewrite_rules');
+add_action('init', 'bp_migrate_posts_to_noticias');
 
 function bp_remove_page_editor() {
     remove_post_type_support('page', 'editor');

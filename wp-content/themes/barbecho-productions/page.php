@@ -77,7 +77,7 @@ $featured_projects = get_field('featured-projects');
 
     <?php
     $news_query = new WP_Query([
-        'post_type'      => 'post',
+        'post_type'      => 'noticia',
         'post_status'    => 'publish',
         'posts_per_page' => 3,
         'orderby'        => 'date',
@@ -109,7 +109,7 @@ $featured_projects = get_field('featured-projects');
             </div>
 
             <div class="news-section__actions">
-                <a class="btn btn--inverse" href="<?php echo esc_url(home_url('/Noticias')); ?>">
+                <a class="btn btn--inverse" href="<?php echo esc_url(home_url('/noticias/')); ?>">
                     Ver más
                 </a>
             </div>
