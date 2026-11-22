@@ -29,7 +29,7 @@ $featured_projects = get_field('featured-projects');
     </div>
     <?php if ($featured_projects) : ?>
         <section class="projects-showcase-section">
-            <h3>Proyectos destacados</h3>
+            <h2 class="projects-showcase-section__title text-5xl with-leading-slash">Proyectos destacados</h3>
             <?php foreach ( $featured_projects as $post ) : ?>
                 <?php
                     setup_postdata( $post );
@@ -86,7 +86,7 @@ $featured_projects = get_field('featured-projects');
     ?>
     <?php if ($news_query->have_posts()) : ?>
         <section class="news-section">
-            <h2 class="news-section__title text-3xl with-leading-slash">Novedades</h2>
+            <h2 class="news-section__title text-5xl with-leading-slash">Novedades</h2>
 
             <div class="news-section__grid">
                 <?php while ($news_query->have_posts()) : $news_query->the_post(); ?>
