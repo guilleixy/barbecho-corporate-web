@@ -27,6 +27,9 @@ const animateHero = (hero) => {
 
   const mainElement = document.querySelector('main');
   const headerOffset = parseFloat(window.getComputedStyle(mainElement).marginTop);
+  const headerLogoWidth = window.getComputedStyle(document.querySelector('.header'))
+    .getPropertyValue('--header-logo-width')
+    .trim();
 
   const intro = gsap.timeline({
     scrollTrigger: {
@@ -59,7 +62,7 @@ if (lineHorizontal) {
 
   if (lineVertical) {
     intro.to(lineVertical, {
-      left: '95%',
+      left: `calc(100% - ${headerLogoWidth})`,
       ease: 'power2.inOut'
     }, 0.05);
   }
@@ -110,7 +113,7 @@ if (lineHorizontal) {
   intro.to(bottomLeft, {
     top: 0,
     left: 0,
-    width: '95%', // TODO: poner para que coincida con header
+    width: `calc(100% - ${headerLogoWidth})`,
     height: '100%',
     ease: 'power2.inOut'
   }, 0.05);

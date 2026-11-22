@@ -10,9 +10,9 @@
         <header class="header" role="banner">
             <div class="header__navigation gap-xs">
                 <nav role="navigation">
-                    <?php wp_nav_menu(['theme_location' => 'header', 'menu_class' => 'nav nav--header']); ?>
+                    <?php wp_nav_menu(['theme_location' => 'header', 'menu_class' => 'nav nav--header text-xl']); ?>
                 </nav>
-                <div class="">
+                <div class="header__navigation__logo text-xl">
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header__logo">
                         barbecho
                     </a>

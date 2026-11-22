@@ -2471,6 +2471,7 @@ main {
 }
 
 .header {
+  --header-logo-width: 10dvw;
   height: 12dvh;
   position: fixed;
   top: 0;
@@ -2478,6 +2479,18 @@ main {
   background-color: #D62329;
   color: #0B0909;
   width: 100%;
+  font-weight: 200;
+  padding-bottom: 24px;
+}
+.header:before {
+  content: "";
+  width: 4px;
+  height: 100%;
+  background-color: #0B0909;
+  position: absolute;
+  top: 0;
+  left: calc(100% - var(--header-logo-width));
+  z-index: 1;
 }
 .header:after {
   content: "";
@@ -2504,6 +2517,11 @@ main {
     height: 100%;
     background-color: #D62329;
   }
+}
+.header .header__navigation__logo {
+  font-weight: 400;
+  width: var(--header-logo-width);
+  padding-left: 12px;
 }
 
 .footer {
@@ -2632,6 +2650,20 @@ main {
   display: block;
 }
 
+.nav--header {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.nav--header > li {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.nav--header > li:not(:last-child)::after {
+  content: "/";
+  margin-left: 12px;
+}
 @media screen and (max-width: 1000px) {
   .nav--header ul {
     list-style: none;

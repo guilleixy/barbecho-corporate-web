@@ -3,6 +3,7 @@
 
 .header {
 	// padding: $base-spacing-unit 0;
+	--header-logo-width: #{$header-logo-width};
 	height: $header-height;
 	position: fixed;
 	top: 0;
@@ -10,6 +11,19 @@
 	background-color: map.get($colors, 'brand');
 	color: map.get($colors, 'background');
 	width: 100%;
+	font-weight: 200;
+	padding-bottom: map.get($spacings, 'sm');
+
+	&:before {
+		content: "";
+		width: $line-width;
+		height: 100%;
+		background-color: map.get($colors, 'background');
+		position: absolute;
+		top: 0;
+		left: calc(100% - var(--header-logo-width));
+		z-index: 1;
+	}
 
 	&:after {
 		content: "";
@@ -35,6 +49,11 @@
 			background-color: map.get($colors, 'brand');
 			nav {
 			}
+		}
+		&__logo{
+		    font-weight: 400;
+		    width: var(--header-logo-width);
+			padding-left: map.get($spacings, 'xs');
 		}
 	}
 }
