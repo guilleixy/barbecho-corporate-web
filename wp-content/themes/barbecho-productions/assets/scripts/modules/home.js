@@ -30,44 +30,48 @@ const animateProjectShowcase = (project) => {
   gsap.set(title, { xPercent: -105 });
 
 
-  // TODO revisar el scrub porque estas animaciones no deberían de tener
-  const projectShowcaseTimeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: project,
-      start: 'center center',
-      end: '+=40%',
-      pin: true,
-      scrub: true,
-    }
-  })
+  const entranceTimeline = gsap.timeline({ paused: true });
 
-  projectShowcaseTimeline.to(thumbnail, {
+  entranceTimeline.to(thumbnail, {
     scale: 1,
-    duration: 0.3,
+    duration: 0.35,
     ease: 'power2.out',
-    scrub: false,
-  }, 0)
+  }, 0);
 
-  projectShowcaseTimeline.to(title, {
+  entranceTimeline.to(title, {
     xPercent: 0,
-    duration: 0.5,
+    duration: 0.4,
     ease: 'power2.out',
-    scrub: false,
-  }, 0.1)
+  }, 0.1);
 
-  projectShowcaseTimeline.to(title, {
+  const exitTimeline = gsap.timeline({ paused: true });
+
+  exitTimeline.to(title, {
     xPercent: -105,
-    duration: 0.5,
-    ease: 'power2.out',
-    scrub: false,
-  }, 0.9)
+    duration: 0.35,
+    ease: 'power2.in',
+  }, 0);
 
-  projectShowcaseTimeline.to(thumbnail, {
+  exitTimeline.to(thumbnail, {
     scale: reducedScale,
-    duration: 0.3,
-    ease: 'power2.out',
+    duration: 0.35,
+    ease: 'power2.in',
+  }, 0.1);
+
+  ScrollTrigger.create({
+    trigger: project,
+    start: 'center center',
+    end: '+=100%',
+    pin: true,
     scrub: false,
-  }, 1)
+    onEnter: () => entranceTimeline.play(),
+    onLeave: () => exitTimeline.play(),
+    onEnterBack: () => exitTimeline.reverse(),
+    onLeaveBack: () => {
+      exitTimeline.reverse();
+      entranceTimeline.reverse();
+    },
+  });
 }
 
 export const initHome = () => {
