@@ -1,0 +1,85 @@
+@use "sass:map";
+@use '../config' as *;
+
+.post {
+    &__header {
+        background-color: map.get($colors, 'brand');
+        color: map.get($colors, 'background');
+    }
+
+    &__header-inner {
+        max-width: $grid-max-width;
+        margin: 0 auto;
+        padding: map.get($spacings, 'xs') map.get($spacings, 'lg');
+    }
+
+    &__meta {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: map.get($spacings, 'xs');
+        font-size: map.get(map.get($font-sizes, 'xs'), 'font-size') * 1px;
+    }
+
+    &__category {
+        text-transform: uppercase;
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__thumbnail {
+        height: 50dvh;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        //        width: 100%;
+        background-color: map.get($colors, 'base');
+    }
+
+    &__content-inner {
+        width: min(60%, $grid-max-width);
+        margin: 0 auto;
+        padding: map.get($spacings, 'xl') map.get($spacings, 'lg');
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__other-news {
+        margin-top: 0;
+    }
+
+    @include resp-max($breakpoint-md) {
+        &__thumbnail {
+            height: 40dvh;
+        }
+
+        &__content-inner {
+            width: 80%;
+        }
+    }
+
+    @include resp-max($breakpoint-sm) {
+        &__header-inner {
+            padding-inline: map.get($spacings, 'md');
+        }
+
+        &__thumbnail {
+            height: 30dvh;
+        }
+
+        &__content-inner {
+            width: 100%;
+            padding-inline: map.get($spacings, 'md');
+        }
+    }
+}

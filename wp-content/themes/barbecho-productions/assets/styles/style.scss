@@ -26,6 +26,7 @@ Text Domain: barbecho
 // 5. Layouts
 @use 'pages/home';
 @use 'pages/somos';
+@use 'pages/post';
 
 // Base stuff
 @use 'base/layouts';
