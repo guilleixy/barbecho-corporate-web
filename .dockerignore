@@ -1,0 +1,8 @@
+.git
+.env
+.github
+.vscode
+wp-content/uploads
+wp-content/themes/*/node_modules
+wp-content/themes/*/dist
+
