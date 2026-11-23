@@ -1,0 +1,12 @@
+kind: wasmer.io/App.v0
+owner: guilleixy
+name: barbecho-corporate-web
+package: .
+
+scaling:
+  mode: single_concurrency
+
+capabilities:
+  database:
+    engine: mysql
+

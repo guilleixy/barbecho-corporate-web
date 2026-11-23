@@ -1,0 +1,20 @@
+[package]
+name = "guilleixy/barbecho-corporate-web"
+version = "0.1.0"
+description = "Barbecho corporate WordPress website"
+entrypoint = "run"
+
+[dependencies]
+"php/php" = "8.3"
+
+[fs]
+"/app" = "."
+
+[[command]]
+name = "run"
+module = "php/php:php"
+runner = "wasi"
+
+[command.annotations.wasi]
+main-args = ["-t", "/app", "-S", "0.0.0.0:8080"]
+
