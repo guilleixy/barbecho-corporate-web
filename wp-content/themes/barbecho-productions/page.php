@@ -16,6 +16,24 @@ $featured_projects = get_field('featured-projects');
     ?>
     <section class="claim-section">
         <h2>Hacemos cine</h2>
+        <div class="claim-section__images">
+            <?php
+            $making_of_zorro_uri = get_template_directory_uri() . '/img/making-of-zorro';
+            $making_of_zorro_dir = get_template_directory() . '/img/making-of-zorro';
+            $making_of_zorro_frames = glob($making_of_zorro_dir . '/*.png');
+            usort($making_of_zorro_frames, function ($left, $right) {
+                return intval(pathinfo($left, PATHINFO_FILENAME)) <=> intval(pathinfo($right, PATHINFO_FILENAME));
+            });
+            foreach ($making_of_zorro_frames as $making_of_zorro_frame) :
+            ?>
+                <img
+                    class="claim-section__image"
+                    src="<?php echo esc_url($making_of_zorro_uri . '/' . rawurlencode(basename($making_of_zorro_frame))); ?>"
+                    alt=""
+                    loading="eager"
+                >
+            <?php endforeach; ?>
+        </div>
     </section>
     <div class="claim-section-end">
         <img src="https://static.photos/cat"/>

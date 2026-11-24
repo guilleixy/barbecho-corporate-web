@@ -2162,6 +2162,31 @@ img .float-center {
   background-color: #0B0909;
   color: #E9E9E9;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.claim-section h2 {
+  position: absolute;
+  z-index: 2;
+}
+
+.claim-section__images {
+  position: absolute;
+  inset: 0;
+}
+
+.claim-section__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+}
+
+.claim-section__image--active {
+  opacity: 1;
 }
 
 .claim-section-end {
