@@ -1,15 +1,24 @@
 @use '../config' as *;
 
 .section {
+	padding-inline: var(--page-gutter);
+
+	> .container {
+		padding-inline: 0;
+	}
+
 	&.section--spaced {
-		padding: var(--section-vertical-padding) 0;
+		padding-block: var(--section-vertical-padding);
 		+.section--spaced {
 			padding-top: 0;
 		}
 	}
 	&.section--width-content {
-		max-width: $grid-max-width;
-		margin: auto;
+		width: 100%;
+		max-width: var(--page-max-width);
+		box-sizing: border-box;
+		margin-inline: auto;
+		padding-inline: var(--page-gutter);
 	}
 }
 

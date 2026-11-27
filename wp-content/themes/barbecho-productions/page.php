@@ -15,7 +15,19 @@ $featured_projects = get_field('featured-projects');
     ])
     ?>
     <section class="claim-section">
-        <h2>Hacemos cine</h2>
+        <div class="claim-section__content">
+            <h2 class="text-6xl claim-section__title">Hacemos cine</h2>
+            <article>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit turpis pulvinar quisque senectus, quam lobortis massa proin leo at volutpat suspendisse class habitasse.
+                </p>
+            </article>
+            <article>
+                <p>
+                    Tempor vehicula tincidunt et phasellus viverra quam penatibus ullamcorper eget nam, laoreet volutpat ridiculus placerat parturient augue mollis magna varius cubilia.
+                </p>
+            </article>
+        </div>
         <div class="claim-section__images">
             <?php
             $making_of_zorro_uri = get_template_directory_uri() . '/img/making-of-zorro';
@@ -36,14 +48,14 @@ $featured_projects = get_field('featured-projects');
         </div>
     </section>
     <div class="claim-section-end">
-        <img src="https://static.photos/cat"/>
-        <img src="https://static.photos/cat"/>
-        <img src="https://static.photos/cat"/>
-        <img src="https://static.photos/cat"/>
-        <img src="https://static.photos/cat"/>
-        <img src="https://static.photos/cat"/>
-        <img src="https://static.photos/cat"/>
-        <img src="https://static.photos/cat"/>
+        <img class="claim-section-end__image" src="https://static.photos/cat"/>
+        <img class="claim-section-end__image" src="https://static.photos/cat"/>
+        <img class="claim-section-end__image" src="https://static.photos/cat"/>
+        <img class="claim-section-end__image" src="https://static.photos/cat"/>
+        <img class="claim-section-end__image" src="https://static.photos/cat"/>
+        <img class="claim-section-end__image" src="https://static.photos/cat"/>
+        <img class="claim-section-end__image" src="https://static.photos/cat"/>
+        <img class="claim-section-end__image" src="https://static.photos/cat"/>
     </div>
     <?php if ($featured_projects) : ?>
         <section class="projects-showcase-section">
@@ -59,7 +71,7 @@ $featured_projects = get_field('featured-projects');
 
                         </div>
                     </div>
-                    <h4 class="project-showcase__title">
+                    <h4 class="project-showcase__title text-3xl">
                         <?php the_title(); ?>
                     </h4>
                     <?php

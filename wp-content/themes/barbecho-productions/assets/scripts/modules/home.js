@@ -10,7 +10,7 @@ const initClaimSectionEnd = () => {
     scrollTrigger: {
       trigger: ".claim-section-end",
       start: "top 50%",
-      end: "top 3%",
+      end: "top -30%",
       scrub: true
     }
   });

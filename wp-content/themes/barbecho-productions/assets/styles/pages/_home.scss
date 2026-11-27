@@ -9,17 +9,18 @@
     color: map.get($colors, 'base');
     min-height: 100vh;
     position: relative;
-    overflow: hidden;
-}
-
-.claim-section h2 {
-    position: absolute;
-    z-index: 2;
-}
-
-.claim-section__images {
-    position: absolute;
-    inset: 0;
+    display: flex;
+    &__content {
+        width: 50%;
+        h2 {
+            z-index: 2;
+        }
+    }
+    &__images {
+        width: 50%;
+        position: relative;
+        inset: 0;
+    }
 }
 
 .claim-section__image {
@@ -38,7 +39,13 @@
 .claim-section-end {
     clip-path: polygon(0 0, 100% 0, 100% 0%, 0 100%);
     background-color: map.get($colors, 'background');
-    min-height: 40vh;
+    min-height: 70vh;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    img {
+        position: absolute;
+    }
 }
 
 .projects-showcase-section {
@@ -65,7 +72,7 @@
                 overflow: hidden;
                 aspect-ratio: 16 / 9;
                 // min / valor // max
-                width: clamp(280px, 30dvw, 600px);
+                width: clamp(280px, 30dvw, 1200px);
                 position: relative;
                 flex-shrink: 0;
                 flex-grow: 0;
