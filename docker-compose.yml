@@ -42,6 +42,7 @@ services:
       WP_ENVIRONMENT_TYPE: '${WP_ENVIRONMENT_TYPE}'
     volumes:
       - ./wp-content:/var/www/html/wp-content
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini:ro
     networks:
       - wordpress-network
 
